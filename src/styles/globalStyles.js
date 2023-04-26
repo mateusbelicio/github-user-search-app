@@ -54,14 +54,38 @@ const GlobalStyle = createGlobalStyle`
         --size-950: 4rem;               /* 64px */
     }
 
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
     body {
         font-family: 'Space Mono', monospace;
-        min-height: 100vh;
+        min-height: max(100vh, 56.25rem);
+        background-color: var(--clr-neutral-500);
+        overflow-x: hidden;
+
+        color: var(--clr-neutral-100);
     }
 
     html {
-        overflow-x: hidden;
         scroll-behavior: smooth;
+    }
+
+    input,
+    button,
+    select {
+        font: inherit;
+    }
+
+    img,
+    picture,
+    figure {
+        display: block;
+        max-width: 100%;
     }
 `;
 
