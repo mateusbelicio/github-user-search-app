@@ -1,14 +1,18 @@
+import { useState } from 'react';
+
 import SearchStyle from './SearchStyle';
 import icons from '../../assets/icons.svg';
 
 const Search = () => {
+  const [usernameSearched, setUsernameSearched] = useState('');
+
   const searchUser = function (event) {
     event.preventDefault();
-    console.log(event.target.username.value);
+    setUsernameSearched(event.target.username.value);
   };
 
   return (
-    <SearchStyle noValidate className='search' action='#' onSubmit={searchUser}>
+    <SearchStyle noValidate className='search' onSubmit={searchUser}>
       <svg className='search__icon'>
         <use href={`${icons}#icon-search`} />
       </svg>
