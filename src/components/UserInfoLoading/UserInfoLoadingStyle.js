@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
-const UserInfoLoading = styled.div`
+const UserInfoLoadingStyle = styled.div`
   height: 5rem;
   background-color: var(--clr-neutral-400);
   border-radius: var(--size-250);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
 
   background-image: linear-gradient(
     90deg,
@@ -24,4 +28,4 @@ const UserInfoLoading = styled.div`
   }
 `;
 
-export default UserInfoLoading;
+export default UserInfoLoadingStyle;

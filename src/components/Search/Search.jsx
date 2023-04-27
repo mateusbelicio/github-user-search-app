@@ -1,14 +1,15 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import { UserContext } from '../../App';
 
 import SearchStyle from './SearchStyle';
 import icons from '../../assets/icons.svg';
 
 const Search = () => {
-  const [usernameSearched, setUsernameSearched] = useState('');
+  const { setUserName } = useContext(UserContext);
 
   const searchUser = function (event) {
     event.preventDefault();
-    setUsernameSearched(event.target.username.value);
+    setUserName(event.target.username.value);
   };
 
   return (

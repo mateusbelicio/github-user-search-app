@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const UserInfoError = styled.div`
+const UserInfoErrorStyle = styled.div`
   height: 5rem;
   background-color: var(--clr-neutral-400);
   border-radius: var(--size-250);
@@ -9,15 +9,12 @@ const UserInfoError = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
+  color: var(--clr-neutral-100);
 
-  &::before {
-    content: url(/src/assets/icon-search.svg);
-  }
-
-  &::after {
-    content: 'User not found. Try again...';
-    color: var(--clr-neutral-100);
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 `;
 
-export default UserInfoError;
+export default UserInfoErrorStyle;
