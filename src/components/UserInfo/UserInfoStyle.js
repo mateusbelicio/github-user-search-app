@@ -201,8 +201,10 @@ const UserInfoStyle = styled.section`
       }
 
       &[data-available='true'] {
-        .info__about-link:hover {
+        .info__about-link:hover,
+        .info__about-link:focus-visible {
           text-decoration: underline;
+          outline: none;
         }
       }
 
@@ -225,6 +227,7 @@ const UserInfoStyle = styled.section`
 
       a {
         text-decoration: none;
+        outline: none;
         color: inherit;
       }
     }

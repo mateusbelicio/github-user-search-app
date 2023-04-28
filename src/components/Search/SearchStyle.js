@@ -8,7 +8,7 @@ const SearchStyle = styled.form`
   @media (min-width: 36em) {
     --gap: 1.5rem;
     --pad-large: 2rem;
-    --pad-small: 0.625rem;
+    --pad-small: 0.59375rem;
   }
 
   padding: var(--pad-small) var(--pad-small) var(--pad-small) var(--pad-large);
@@ -44,10 +44,15 @@ const SearchStyle = styled.form`
       background-color: transparent;
       color: inherit;
       caret-color: var(--clr-primary-400);
+      font-size: var(--size-200);
       overflow-x: auto;
 
+      @media (min-width: 36em) {
+        font-size: var(--size-350);
+      }
+
       &::placeholder {
-        opacity: 0.75;
+        opacity: 1;
       }
     }
 
@@ -64,6 +69,11 @@ const SearchStyle = styled.form`
       cursor: pointer;
 
       transition: background-color 0.25s;
+
+      @media (min-width: 36em) {
+        padding: var(--size-200) var(--size-500);
+        font-size: var(--size-300);
+      }
 
       &:hover,
       &:focus-visible {

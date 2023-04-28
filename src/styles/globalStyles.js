@@ -108,13 +108,19 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         font-family: 'Space Mono', monospace;
-        min-height: max(100vh, 56.25rem);
+        min-height: 100vh;
         overflow-x: hidden;
 
         background-color: var(--clr-body-bg);
         color: var(--clr-text);
 
         transition: background-color 0.25s, color 0.25s;
+
+        padding-block: var(--size-700) 5rem;
+        
+        @media (min-width: 36em) {
+            padding-block: 9rem 14.75rem;
+        }
     }
 
     html {

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 const HeaderStyle = styled.header`
-  margin-top: var(--size-700);
   margin-bottom: var(--size-300);
 
   display: flex;
@@ -13,7 +12,6 @@ const HeaderStyle = styled.header`
 
   @media (min-width: 36em) {
     margin-bottom: var(--size-500);
-    margin-top: 9rem;
   }
 
   h1 {
