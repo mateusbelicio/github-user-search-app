@@ -39,14 +39,14 @@ const UserInfo = ({ data, isError, isLoading }) => {
             <svg className='info__about-icon'>
               <use href={`${icons}#icon-location`} />
             </svg>
-            <span className='info__about-value'>{data.location}</span>
+            <span className='info__about-value'>{data.location || 'Not Available'}</span>
           </li>
           <li className='info__about-item' data-available={data.website.available}>
             <svg className='info__about-icon'>
               <use href={`${icons}#icon-website`} />
             </svg>
             <span className='info__about-value'>
-              <a href={data.website.link} target='_blank'>
+              <a href={data.website.link} className='info__about-link' target='_blank'>
                 {data.website.name}
               </a>
             </span>
@@ -56,7 +56,7 @@ const UserInfo = ({ data, isError, isLoading }) => {
               <use href={`${icons}#icon-twitter`} />
             </svg>
             <span className='info__about-value'>
-              <a href={data.twitter.link} target='_blank'>
+              <a href={data.twitter.link} className='info__about-link' target='_blank'>
                 {data.twitter.username}
               </a>
             </span>

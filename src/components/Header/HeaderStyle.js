@@ -8,6 +8,9 @@ const HeaderStyle = styled.header`
   flex-direction: column;
   gap: var(--size-750);
 
+  color: var(--clr-title);
+  transition: color 0.25s;
+
   @media (min-width: 36em) {
     margin-bottom: var(--size-500);
     margin-top: 9rem;

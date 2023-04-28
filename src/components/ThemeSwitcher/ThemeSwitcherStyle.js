@@ -8,9 +8,14 @@ const ThemeSwitcherStyled = styled.button`
   align-items: center;
   gap: var(--size-300);
 
-  color: ${({ dataTheme }) =>
-    dataTheme === 'dark' ? 'var(--clr-neutral-100)' : 'var(--clr-neutral-400)'};
+  color: var(--clr-theme-btn);
   cursor: pointer;
+
+  transition: color 0.25s;
+
+  &:hover {
+    color: var(--clr-theme-btn-hover);
+  }
 
   span {
     color: inherit;

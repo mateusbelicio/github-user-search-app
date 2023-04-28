@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import ThemeSwitcherStyled from './ThemeSwitcherStyle';
 import icons from '../../assets/icons.svg';
@@ -17,14 +17,21 @@ const ThemeSwitcher = () => {
     },
   };
 
+  const saveTheme = (newTheme) => window.localStorage.setItem('theme', newTheme);
+  const loadTheme = () => window.localStorage.getItem('theme');
+
   const toggleTheme = function () {
     const htmlElement = document.querySelector('html');
-    const currentTheme = htmlElement.dataset.theme;
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    const newTheme = htmlElement.dataset.theme === 'dark' ? 'light' : 'dark';
 
     setTheme(newTheme);
+    saveTheme(newTheme);
     htmlElement.dataset.theme = newTheme;
   };
+
+  useEffect(() => {
+    document.querySelector('html').dataset.theme = loadTheme();
+  }, []);
 
   return (
     <ThemeSwitcherStyled onClick={toggleTheme} dataTheme={theme}>

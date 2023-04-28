@@ -11,10 +11,12 @@ const UserInfoStyle = styled.section`
   column-gap: var(--size-400);
 
   padding: var(--size-700) var(--size-500) var(--size-850);
-  background-color: var(--clr-neutral-400);
+  background-color: var(--clr-bg);
   border-radius: var(--size-250);
-  /* box-shadow: var(--shadow); */
+  box-shadow: var(--shadow);
   font-size: var(--size-200);
+
+  transition: background-color 0.25s, color 0.25s, box-shadow 0.25s;
 
   @media (min-width: 36em) {
     --image-size: 7.3125rem;
@@ -34,6 +36,7 @@ const UserInfoStyle = styled.section`
 
       aspect-ratio: 1;
       border-radius: 50%;
+      background-color: var(--clr-body-bg);
 
       @media (min-width: 50em) {
         grid-row: 1 / span 2;
@@ -54,6 +57,9 @@ const UserInfoStyle = styled.section`
     &__name {
       font-size: var(--size-300);
       font-weight: 700;
+      color: var(--clr-title);
+
+      transition: color 0.25s;
 
       @media (min-width: 36em) {
         font-size: var(--size-550);
@@ -67,6 +73,9 @@ const UserInfoStyle = styled.section`
     }
 
     &__join-date {
+      color: var(--clr-text-secondary);
+      transition: color 0.25s;
+
       @media (min-width: 50em) {
         justify-self: end;
       }
@@ -92,6 +101,9 @@ const UserInfoStyle = styled.section`
 
       margin-top: var(--size-700);
       line-height: 1.5625rem;
+      color: var(--clr-text-75);
+
+      transition: color 0.25s;
 
       @media (min-width: 36em) {
         margin-top: var(--size-400);
@@ -110,8 +122,10 @@ const UserInfoStyle = styled.section`
       padding: var(--size-350) var(--size-250);
       margin-block: var(--size-500);
 
-      background-color: var(--clr-neutral-500);
+      background-color: var(--clr-body-bg);
       border-radius: var(--size-150);
+
+      transition: background-color 0.25s, color 0.25s;
 
       @media (min-width: 36em) {
         padding: var(--size-300) var(--size-700);
@@ -126,6 +140,8 @@ const UserInfoStyle = styled.section`
       align-items: center;
       gap: var(--size-100);
 
+      transition: inherit;
+
       @media (min-width: 36em) {
         align-items: flex-start;
         gap: 0.0625rem;
@@ -136,6 +152,8 @@ const UserInfoStyle = styled.section`
       font-size: var(--size-150);
       font-weight: 400;
 
+      transition: inherit;
+
       @media (min-width: 36em) {
         font-size: var(--size-200);
       }
@@ -144,6 +162,9 @@ const UserInfoStyle = styled.section`
     &__data-value {
       font-size: var(--size-300);
       font-weight: 700;
+      color: var(--clr-title);
+
+      transition: inherit;
 
       @media (min-width: 36em) {
         font-size: var(--size-450);
@@ -171,10 +192,18 @@ const UserInfoStyle = styled.section`
       align-items: center;
       gap: var(--size-200);
 
-      color: var(--clr-neutral-100);
+      color: var(--clr-text);
+
+      transition: color 0.25s;
 
       &[data-available='false'] {
         opacity: 0.5;
+      }
+
+      &[data-available='true'] {
+        .info__about-link:hover {
+          text-decoration: underline;
+        }
       }
 
       @media (min-width: 36em) {

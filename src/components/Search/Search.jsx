@@ -13,7 +13,14 @@ const Search = () => {
   };
 
   return (
-    <SearchStyle noValidate className='search' onSubmit={searchUser}>
+    <SearchStyle
+      noValidate
+      className='search'
+      onSubmit={searchUser}
+      onClick={() => {
+        document.getElementById('search-input').focus();
+      }}
+    >
       <svg className='search__icon'>
         <use href={`${icons}#icon-search`} />
       </svg>

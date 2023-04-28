@@ -2,6 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
     :root {
+        --hsl-primary-300: 212 100% 69%;
         --hsl-primary-400: 212 100% 50%;
         
         --hsl-secondary-300: 217 20% 51%;            
@@ -11,13 +12,16 @@ const GlobalStyle = createGlobalStyle`
         --hsl-neutral-100: 0 0% 100%;            
         --hsl-neutral-200: 0 0% 99.6%;            
         --hsl-neutral-300: 227 100% 98%;            
-        --hsl-neutral-400: 222 41% 20%;            
-        --hsl-neutral-500: 220 40% 13%;
+        --hsl-neutral-400: 222 40% 70%;            
+        --hsl-neutral-500: 222 41% 20%;            
+        --hsl-neutral-600: 220 40% 13%;
+        --hsl-neutral-700: 220 18% 16%;
 
         --hsl-accent-400: 0 91% 62%;
     }
 
     :root {        
+        --clr-primary-300: hsl(var(--hsl-primary-300) / 1);
         --clr-primary-400: hsl(var(--hsl-primary-400) / 1);
 
         --clr-secondary-300: hsl(var(--hsl-secondary-300) / 1);
@@ -29,10 +33,10 @@ const GlobalStyle = createGlobalStyle`
         --clr-neutral-300: hsl(var(--hsl-neutral-300) / 1);
         --clr-neutral-400: hsl(var(--hsl-neutral-400) / 1);
         --clr-neutral-500: hsl(var(--hsl-neutral-500) / 1);
+        --clr-neutral-600: hsl(var(--hsl-neutral-600) / 1);
+        --clr-neutral-700: hsl(var(--hsl-neutral-700) / 1);
 
         --clr-accent-400: hsl(var(--hsl-accent-400) / 1);
-
-        --shadow: 0 1rem 1.875rem -0.625rem hsl(var(--hsl-secondary-400) / 0.198567);
     }
 
     :root {
@@ -56,6 +60,44 @@ const GlobalStyle = createGlobalStyle`
         --size-950: 4rem;               /* 64px */
     }
 
+    html[data-theme='dark'] {
+        --clr-text: var(--clr-neutral-100);
+        --clr-text-75: hsl(var(--hsl-neutral-100) / 0.75);
+        --clr-text-secondary: var(--clr-neutral-100);
+        --clr-title: var(--clr-neutral-100);
+        --clr-body-bg: var(--clr-neutral-600);
+        --clr-bg: var(--clr-neutral-500);
+        --clr-theme-btn: var(--clr-neutral-100);
+        --clr-theme-btn-hover: var(--clr-neutral-400);
+        --shadow: 0 1rem 1.875rem -0.625rem hsl(var(--hsl-neutral-700) / 0.198567);
+        --bg-animation: linear-gradient(
+            90deg,
+            var(--clr-bg) 0%,
+            var(--clr-bg) 15%,
+            hsl(var(--hsl-neutral-100) / 5%) 20%,
+            var(--clr-bg) 25%
+        );
+    }
+
+    html[data-theme='light'] {
+        --clr-text: var(--clr-secondary-400);
+        --clr-text-75: hsl(var(--hsl-secondary-400) / 0.75);
+        --clr-text-secondary: var(--clr-secondary-300);
+        --clr-title: var(--clr-secondary-500);
+        --clr-body-bg: var(--clr-neutral-300);
+        --clr-bg: var(--clr-neutral-200);
+        --clr-theme-btn: var(--clr-secondary-300);
+        --clr-theme-btn-hover: var(--clr-neutral-700);
+        --shadow: 0 1rem 1.875rem -0.625rem hsl(var(--hsl-secondary-400) / 0.198567);
+        --bg-animation: linear-gradient(
+            90deg,
+            var(--clr-bg) 0%,
+            var(--clr-bg) 15%,
+            hsl(var(--hsl-neutral-100) / 5%) 20%,
+            var(--clr-bg) 25%
+        );
+    }
+
     *,
     *::before,
     *::after {
@@ -67,10 +109,12 @@ const GlobalStyle = createGlobalStyle`
     body {
         font-family: 'Space Mono', monospace;
         min-height: max(100vh, 56.25rem);
-        background-color: var(--clr-neutral-500);
         overflow-x: hidden;
 
-        color: var(--clr-neutral-100);
+        background-color: var(--clr-body-bg);
+        color: var(--clr-text);
+
+        transition: background-color 0.25s, color 0.25s;
     }
 
     html {

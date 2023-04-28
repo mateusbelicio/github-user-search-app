@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const UserInfoLoadingStyle = styled.div`
   height: 5rem;
-  background-color: var(--clr-neutral-400);
+  background-color: var(--clr-bg);
   border-radius: var(--size-250);
   display: flex;
   align-items: center;
@@ -11,13 +11,14 @@ const UserInfoLoadingStyle = styled.div`
 
   background-image: linear-gradient(
     90deg,
-    var(--clr-neutral-400) 0%,
-    var(--clr-neutral-400) 15%,
-    hsl(var(--hsl-neutral-100) / 5%) 20%,
-    var(--clr-neutral-400) 25%
+    var(--clr-bg) 0%,
+    var(--clr-bg) 15%,
+    hsl(var(--hsl-neutral-500) / 5%) 20%,
+    var(--clr-bg) 25%
   );
   background-size: 300%;
   background-position-x: 100%;
+  box-shadow: var(--shadow);
 
   animation: shimmer 1.5s infinite linear;
 
