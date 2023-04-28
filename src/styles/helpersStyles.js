@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const HelpersStyle = createGlobalStyle`
   .container {
-    --max-width: 50rem;
+    --max-width: 45.625rem;
     --padding: 1.5rem;
 
     max-width: var(--max-width);

@@ -9,13 +9,7 @@ const UserInfoLoadingStyle = styled.div`
   justify-content: center;
   color: transparent;
 
-  background-image: linear-gradient(
-    90deg,
-    var(--clr-bg) 0%,
-    var(--clr-bg) 15%,
-    hsl(var(--hsl-neutral-500) / 5%) 20%,
-    var(--clr-bg) 25%
-  );
+  background-image: var(--bg-animation);
   background-size: 300%;
   background-position-x: 100%;
   box-shadow: var(--shadow);

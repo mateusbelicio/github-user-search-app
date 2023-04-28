@@ -30,7 +30,8 @@ const ThemeSwitcher = () => {
   };
 
   useEffect(() => {
-    document.querySelector('html').dataset.theme = loadTheme();
+    document.querySelector('html').dataset.theme = loadTheme() || 'dark';
+    setTheme(loadTheme() || 'dark');
   }, []);
 
   return (

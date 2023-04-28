@@ -93,7 +93,7 @@ const GlobalStyle = createGlobalStyle`
             90deg,
             var(--clr-bg) 0%,
             var(--clr-bg) 15%,
-            hsl(var(--hsl-neutral-100) / 5%) 20%,
+            hsl(var(--hsl-neutral-500) / 5%) 20%,
             var(--clr-bg) 25%
         );
     }

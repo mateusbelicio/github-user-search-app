@@ -44,6 +44,7 @@ const SearchStyle = styled.form`
       background-color: transparent;
       color: inherit;
       caret-color: var(--clr-primary-400);
+      overflow-x: auto;
 
       &::placeholder {
         opacity: 0.75;
