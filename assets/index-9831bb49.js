@@ -147,7 +147,7 @@ Error generating stack: `+i.message+`
       }
 
       &::placeholder {
-        opacity: 0.75;
+        opacity: 1;
       }
     }
 
@@ -378,8 +378,10 @@ Error generating stack: `+i.message+`
       }
 
       &[data-available='true'] {
-        .info__about-link:hover {
+        .info__about-link:hover,
+        .info__about-link:focus-visible {
           text-decoration: underline;
+          outline: none;
         }
       }
 
@@ -402,6 +404,7 @@ Error generating stack: `+i.message+`
 
       a {
         text-decoration: none;
+        outline: none;
         color: inherit;
       }
     }
