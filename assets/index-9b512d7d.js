@@ -97,7 +97,7 @@ Error generating stack: `+i.message+`
     width: var(--size-400);
     height: var(--size-400);
   }
-`,un="/github-user-search-app/assets/icons-098d88e8.svg",N0=()=>{const[e,t]=ce.useState("dark"),n={dark:{text:"Light",icon:"sun"},light:{text:"Dark",icon:"moon"}},r=l=>window.localStorage.setItem("theme",l),o=()=>window.localStorage.getItem("theme"),i=function(){const l=document.querySelector("html"),s=l.dataset.theme==="dark"?"light":"dark";t(s),r(s),l.dataset.theme=s};return ce.useEffect(()=>{document.querySelector("html").dataset.theme=o()},[]),z.jsxs(C0,{onClick:i,dataTheme:e,children:[z.jsx("span",{children:n[e].text}),z.jsx("svg",{children:z.jsx("use",{href:`${un}#icon-${n[e].icon}`})})]})},P0=qn.form`
+`,un="/github-user-search-app/assets/icons-098d88e8.svg",N0=()=>{const[e,t]=ce.useState("dark"),n={dark:{text:"Light",icon:"sun"},light:{text:"Dark",icon:"moon"}},r=l=>window.localStorage.setItem("theme",l),o=()=>window.localStorage.getItem("theme"),i=function(){const l=document.querySelector("html"),s=l.dataset.theme==="dark"?"light":"dark";t(s),r(s),l.dataset.theme=s};return ce.useEffect(()=>{document.querySelector("html").dataset.theme=o()||"dark",t(o()||"dark")},[]),z.jsxs(C0,{onClick:i,dataTheme:e,children:[z.jsx("span",{children:n[e].text}),z.jsx("svg",{children:z.jsx("use",{href:`${un}#icon-${n[e].icon}`})})]})},P0=qn.form`
   --gap: 1rem;
   --pad-large: 1rem;
   --pad-small: 0.4375rem;
@@ -141,6 +141,7 @@ Error generating stack: `+i.message+`
       background-color: transparent;
       color: inherit;
       caret-color: var(--clr-primary-400);
+      overflow-x: auto;
 
       &::placeholder {
         opacity: 0.75;
@@ -436,13 +437,7 @@ Error generating stack: `+i.message+`
   justify-content: center;
   color: transparent;
 
-  background-image: linear-gradient(
-    90deg,
-    var(--clr-bg) 0%,
-    var(--clr-bg) 15%,
-    hsl(var(--hsl-neutral-500) / 5%) 20%,
-    var(--clr-bg) 25%
-  );
+  background-image: var(--bg-animation);
   background-size: 300%;
   background-position-x: 100%;
   box-shadow: var(--shadow);
@@ -549,7 +544,7 @@ Error generating stack: `+i.message+`
             90deg,
             var(--clr-bg) 0%,
             var(--clr-bg) 15%,
-            hsl(var(--hsl-neutral-100) / 5%) 20%,
+            hsl(var(--hsl-neutral-500) / 5%) 20%,
             var(--clr-bg) 25%
         );
     }
@@ -591,7 +586,7 @@ Error generating stack: `+i.message+`
     }
 `,ey=jd`
   .container {
-    --max-width: 50rem;
+    --max-width: 45.625rem;
     --padding: 1.5rem;
 
     max-width: var(--max-width);
