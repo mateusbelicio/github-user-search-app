@@ -18,9 +18,9 @@ const filterData = (data) => {
       link: data.twitter_username ? `https://twitter.com/${data.twitter_username}` : '#',
     },
     website: {
-      available: data.site_admin ? true : false,
-      name: data.site_admin || 'Not Available',
-      link: data.site_admin || '#',
+      available: data.blog ? true : false,
+      name: data.blog || 'Not Available',
+      link: data.blog || '#',
     },
     getCreatedDate: () => {
       const createAtDate = new Date(data.created_at);

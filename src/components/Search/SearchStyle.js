@@ -1,10 +1,19 @@
 import styled from 'styled-components';
 
 const SearchStyle = styled.form`
-  --gap: 0.4375rem;
+  --gap: 1rem;
+  --pad-large: 1rem;
+  --pad-small: 0.4375rem;
 
-  padding: var(--gap) var(--gap) var(--gap) 1rem;
+  @media (min-width: 36em) {
+    --gap: 1.5rem;
+    --pad-large: 2rem;
+    --pad-small: 0.625rem;
+  }
+
+  padding: var(--pad-small) var(--pad-small) var(--pad-small) var(--pad-large);
   background-color: var(--clr-neutral-400);
+  /* box-shadow: var(--shadow); */
 
   display: flex;
   align-items: center;
@@ -30,6 +39,7 @@ const SearchStyle = styled.form`
       outline: none;
       background-color: transparent;
       color: inherit;
+      caret-color: var(--clr-primary-400);
     }
 
     &__btn {

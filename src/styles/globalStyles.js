@@ -31,6 +31,8 @@ const GlobalStyle = createGlobalStyle`
         --clr-neutral-500: hsl(var(--hsl-neutral-500) / 1);
 
         --clr-accent-400: hsl(var(--hsl-accent-400) / 1);
+
+        --shadow: 0 1rem 1.875rem -0.625rem hsl(var(--hsl-secondary-400) / 0.198567);
     }
 
     :root {

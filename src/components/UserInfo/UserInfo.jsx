@@ -12,9 +12,11 @@ const UserInfo = ({ data, isError, isLoading }) => {
       <UserInfoStyle className='info'>
         <img className='info__image' src={data.imageSrc} alt='User photo' />
 
-        <h2 className='info__name'>{data.name}</h2>
-        <h3 className='info__username'>@{data.userName}</h3>
-        <span className='info__join-date'>{data.getCreatedDate()}</span>
+        <div className='info__header'>
+          <h2 className='info__name'>{data.name}</h2>
+          <h3 className='info__username'>@{data.userName}</h3>
+          <span className='info__join-date'>{data.getCreatedDate()}</span>
+        </div>
         <p className='info__description'>{data.bio}</p>
 
         <ul className='info__data-list'>

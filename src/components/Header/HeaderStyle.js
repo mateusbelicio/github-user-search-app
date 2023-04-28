@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 
 const HeaderStyle = styled.header`
-  padding-top: var(--size-700);
+  margin-top: var(--size-700);
+  margin-bottom: var(--size-300);
 
   display: flex;
   flex-direction: column;
-  gap: var(--size-300);
-  margin-bottom: var(--size-300);
+  gap: var(--size-750);
 
   @media (min-width: 36em) {
-    gap: var(--size-300);
     margin-bottom: var(--size-500);
+    margin-top: 9rem;
   }
 
   h1 {
